@@ -70,7 +70,7 @@
     </dependencies>
 
     <build>
-        <finalName>springboot-website</finalName>
+        <finalName>javawebapp</finalName>
 
         <plugins>
 
