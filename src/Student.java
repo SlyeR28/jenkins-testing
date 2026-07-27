@@ -44,6 +44,7 @@ public class Student {
         this.school = school;
     }
 
+    // added method
     @Override
     public String toString() {
         return "Student{" +
