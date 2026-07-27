@@ -11,28 +11,28 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class WebController {
 
-    @GetMapping("/")
+    @GetMapping("/javawebapp")
     public String home(Model model) {
         model.addAttribute("pageTitle", "Aetheria - NextGen Digital Solutions");
         model.addAttribute("activePage", "home");
         return "home";
     }
 
-    @GetMapping("/about")
+    @GetMapping("/javawebapp/about")
     public String about(Model model) {
         model.addAttribute("pageTitle", "About Us - Aetheria");
         model.addAttribute("activePage", "about");
         return "about";
     }
 
-    @GetMapping("/services")
+    @GetMapping("/javawebapp/services")
     public String services(Model model) {
         model.addAttribute("pageTitle", "Our Services - Aetheria");
         model.addAttribute("activePage", "services");
         return "services";
     }
 
-    @GetMapping("/contact")
+    @GetMapping("/javawebapp/contact")
     public String contact(Model model) {
         model.addAttribute("pageTitle", "Contact Us - Aetheria");
         model.addAttribute("activePage", "contact");
@@ -42,7 +42,7 @@ public class WebController {
         return "contact";
     }
 
-    @PostMapping("/contact")
+    @PostMapping("/javawebapp/contact")
     public String handleContactSubmit(@ModelAttribute ContactFormDto contactForm, RedirectAttributes redirectAttributes) {
         String displayName = (contactForm.getName() != null && !contactForm.getName().isBlank()) 
                 ? contactForm.getName() : "Valued Guest";
