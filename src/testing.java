@@ -7,5 +7,8 @@ public class testing {
         System.out.println(LocalDateTime.now().toString());
         System.out.println("Jenkins CI/CD");
         System.out.println("Let go baby");
+
+        Student st = new Student(1L , "Rishabh Kumar" , 32 , "Guru Tegh Bahadur Public School");
+        System.out.println(st.toString());
     }
 }
