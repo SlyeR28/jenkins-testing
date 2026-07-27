@@ -6,33 +6,35 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+@RequestMapping("/javawebapp")
 @Controller
 public class WebController {
 
-    @GetMapping("/javawebapp")
+    @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("pageTitle", "Aetheria - NextGen Digital Solutions");
         model.addAttribute("activePage", "home");
         return "home";
     }
 
-    @GetMapping("/javawebapp/about")
+    @GetMapping("/about")
     public String about(Model model) {
         model.addAttribute("pageTitle", "About Us - Aetheria");
         model.addAttribute("activePage", "about");
         return "about";
     }
 
-    @GetMapping("/javawebapp/services")
+    @GetMapping("/services")
     public String services(Model model) {
         model.addAttribute("pageTitle", "Our Services - Aetheria");
         model.addAttribute("activePage", "services");
         return "services";
     }
 
-    @GetMapping("/javawebapp/contact")
+    @GetMapping("/contact")
     public String contact(Model model) {
         model.addAttribute("pageTitle", "Contact Us - Aetheria");
         model.addAttribute("activePage", "contact");
@@ -42,7 +44,7 @@ public class WebController {
         return "contact";
     }
 
-    @PostMapping("/javawebapp/contact")
+    @PostMapping("/contact")
     public String handleContactSubmit(@ModelAttribute ContactFormDto contactForm, RedirectAttributes redirectAttributes) {
         String displayName = (contactForm.getName() != null && !contactForm.getName().isBlank()) 
                 ? contactForm.getName() : "Valued Guest";
