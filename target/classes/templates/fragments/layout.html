@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Aetheria - NextGen Digital Solutions</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <!-- Header / Navbar Fragment -->
+    <header th:fragment="navbar" class="navbar">
+        <div class="container nav-container">
+            <a th:href="@{/}" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+                <span>Aetheria</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li>
+                    <a th:href="@{/}" class="nav-link" th:classappend="${activePage == 'home'} ? 'active' : ''">Home</a>
+                </li>
+                <li>
+                    <a th:href="@{/about}" class="nav-link" th:classappend="${activePage == 'about'} ? 'active' : ''">About Us</a>
+                </li>
+                <li>
+                    <a th:href="@{/services}" class="nav-link" th:classappend="${activePage == 'services'} ? 'active' : ''">Services</a>
+                </li>
+                <li>
+                    <a th:href="@{/contact}" class="nav-link" th:classappend="${activePage == 'contact'} ? 'active' : ''">Contact</a>
+                </li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a th:href="@{/contact}" class="nav-btn">Get Started</a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Footer Fragment -->
+    <footer th:fragment="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a th:href="@{/}" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+                        <div class="logo-icon"><i class="fa-solid fa-cube"></i></div>
+                        <span>Aetheria</span>
+                    </a>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.75rem; max-width: 320px;">
+                        Crafting high-performance digital experiences, scalable cloud systems, and intelligent modern architectures.
+                    </p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a th:href="@{/}">Home</a></li>
+                        <li><a th:href="@{/about}">About Us</a></li>
+                        <li><a th:href="@{/services}">Services</a></li>
+                        <li><a th:href="@{/contact}">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Capabilities</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Cloud Engineering</a></li>
+                        <li><a href="#">AI Systems</a></li>
+                        <li><a href="#">Full-Stack Dev</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <div style="display: flex; gap: 1rem; font-size: 1.2rem; color: var(--text-secondary); margin-top: 0.5rem;">
+                        <a href="#" style="color: var(--text-secondary);"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" style="color: var(--text-secondary);"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" style="color: var(--text-secondary);"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aetheria Technologies. Built with Java Spring Boot &amp; Thymeleaf.</p>
+                <p>Single-Tier Architecture Showcase</p>
+            </div>
+        </div>
+        
+        <!-- Main JS -->
+        <script th:src="@{/js/main.js}"></script>
+    </footer>
+
+</body>
+</html>
